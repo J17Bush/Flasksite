@@ -1,0 +1,44 @@
+<head>
+    <!-- <h1>{{ title }}</h1> -->
+
+
+    <link rel="stylesheet" href='https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+<body> 
+    <div style ="margin-top: 50px;" class ="ui container">
+        <h1 class = "ui center aligned header">Add Book</h1>
+        
+        <form class ="ui form" action= "/add" method ="post">
+            <div classs = "field">
+                <p>Book Title</p>
+                <input type ="text" name ="title" placeholder ="Enter Book..."><br> 
+                <p>Author</p>
+                <input type ="text" name="author" placeholder ="Enter Author..."><br>                 
+            </div>
+            <button class ="ui blue button" type ="submit">Add</button>
+
+        </form>
+    </div> 
+</body>
+
+
+{% for book in books %}
+{% set book_ID = book[0] %}
+<div class ="ui segment">
+
+    <p class="ui big header"> {{book_ID}} - {{book [1]}} | {{book [2]}}</p>
+    <p class = "ui big header"> {{book[1]}} </p>
+    <p> {{book [2]}} </p>
+
+    {% if book.complete %}
+    <span class=" ui gray label">On loan</span>
+    {% else %}
+    <span class="ui green label"> Available </span>
+    {% endif %}
+
+    <a class="ui blue button" href='/update/{{ book_ID }}'>update</a>
+    <a class ="ui red button" href="javascript:void(0);" onclick="confirmDelete({{ book_ID }})">Delete</a>
+
+</div>
+{% endfor %} 

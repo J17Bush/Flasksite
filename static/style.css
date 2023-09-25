@@ -1,0 +1,42 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbfbfb;
+    text-align: center;
+}
+
+nav {
+    background-color: #000000d9;
+}
+
+h1 {
+    color: #1f1f1f;
+}
+
+p {
+    color: #1f1f1f;
+}
+
+a {
+    color : #597EE8;
+}
+
+a :active {
+    color : rgb(255, 0, 0);
+}
+.button {
+    background-color: #dcdcdc;
+    border: none;
+    color: #000000d9;
+    padding: 15px 32px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    justify-content: start;
+    align-items: flex-start;
+    font-size: 16px;
+}
+.button:hover {
+background-color: #597EE8;
+color: antiquewhite;
+}
