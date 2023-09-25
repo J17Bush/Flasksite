@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <head>
     <!-- <h1>{{ title }}</h1> -->
 
@@ -38,7 +40,8 @@
     {% endif %}
 
     <a class="ui blue button" href='/update/{{ book_ID }}'>update</a>
-    <a class ="ui red button" href="javascript:void(0);" onclick="confirmDelete({{ book_ID }})">Delete</a>
+    <a class ="ui red button" href="/delete/{{ book_ID }}" >Delete</a>
 
 </div>
 {% endfor %} 
+{% endblock %}
